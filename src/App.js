@@ -5,7 +5,6 @@ import Home from './components/Home'
 import config from './config'
 
 class App extends React.Component {
-  stockkey = config.STOCK_KEY
   state = {
     stockData: [],
     query: '',
