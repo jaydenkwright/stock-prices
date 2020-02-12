@@ -2,7 +2,6 @@ import React, { useState} from 'react';
 import './App.css';
 import Stock from './components/Stock'
 import Home from './components/Home'
-import config from './config'
 
 class App extends React.Component {
   state = {
@@ -10,7 +9,7 @@ class App extends React.Component {
     query: '',
     stockNews: [],
     isSearching: false,
-    isLoaded: false
+    isLoading: false,
   }
   onChange = (e) => this.setState({ query: e.target.value });
   search = evt => {
@@ -19,7 +18,7 @@ class App extends React.Component {
         .then(res => res.json())
         .then(result => {
           this.setState({
-            isLoaded: true,
+            isLoading: true,
             stockData: result,
             isSearching: true
           })
