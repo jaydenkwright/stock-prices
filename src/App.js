@@ -3,7 +3,6 @@ import './App.css';
 import Stock from './components/Stock'
 import Home from './components/Home'
 import config from './config'
-console.log(process.env.REACT_APP_STOCK_KEY)
 
 class App extends React.Component {
   stockkey = config.STOCK_KEY
