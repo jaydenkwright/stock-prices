@@ -2,9 +2,11 @@ import React, { useState} from 'react';
 import './App.css';
 import Stock from './components/Stock'
 import Home from './components/Home'
+import config from './config'
+console.log(process.env.REACT_APP_STOCK_KEY)
 
 class App extends React.Component {
-  
+  stockkey = config.STOCK_KEY
   state = {
     stockData: [],
     query: '',
@@ -15,7 +17,7 @@ class App extends React.Component {
   onChange = (e) => this.setState({ query: e.target.value });
   search = evt => {
     if( evt.key === "Enter"){
-      fetch(`https://cloud.iexapis.com/stable/stock/${this.state.query}/quote?token=pk_7271f8ad06ff45fd81d0fb214e0a3070`)
+      fetch(`https://cloud.iexapis.com/stable/stock/${this.state.query}/quote?token=${process.env.REACT_APP_STOCK_KEY}`)
         .then(res => res.json())
         .then(result => {
           this.setState({
@@ -23,7 +25,7 @@ class App extends React.Component {
             stockData: result,
             isSearching: true
           })
-          fetch(`https://newsapi.org/v2/everything?q=${this.state.stockData.companyName}&apiKey=74795ff965de424ca0a448b202f0e8a5`)
+          fetch(`https://newsapi.org/v2/everything?q=${this.state.stockData.companyName}&apiKey=${process.env.REACT_APP_NEWS_KEY}`)
             .then(res => res.json())
             .then(result => {
               this.setState({
