@@ -27,13 +27,16 @@ class App extends React.Component {
             stockData: result,
             isSearching: true,
           })
+          // Fetches news data from newsapi.org based on the company name
           fetch(`https://newsapi.org/v2/everything?q=${this.state.stockData.companyName}&apiKey=${process.env.REACT_APP_NEWS_KEY}`)
             .then(res => res.json())
             .then(result => {
+              // sets the news data into state
               this.setState({
+                // news data object
                 stockNews: {
-                title: result.articles[0].title,
-                description: result.articles[0].description
+                  title: result.articles[0].title, 
+                  description: result.articles[0].description
               }
               })
             });
@@ -42,6 +45,7 @@ class App extends React.Component {
   }
   render(){
     return (
+      // class changes depending on weather the user is searching or not
       <div className={this.state.isSearching === false ? "App home" : "App"}>
           <div className="search-box">
           <input 

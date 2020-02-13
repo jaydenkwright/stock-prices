@@ -45,7 +45,7 @@ export class Stock extends Component {
                     <div className="info">
                         <h3>
                             <div className={this.props.data.iexRealtimePrice < this.props.data.open ? 'downPrice' : ''}> 
-                                ${this.props.data.iexRealtimePrice !== null ? this.props.data.iexRealtimePrice : this.props.data.latestPrice}
+                                ${this.props.data.iexRealtimePrice !== 0 ? this.props.data.iexRealtimePrice : this.props.data.latestPrice}
                             </div>
                         </h3>
                         <h5>{ this.props.data.primaryExchange }</h5>

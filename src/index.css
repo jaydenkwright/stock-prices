@@ -79,6 +79,7 @@ code {
 }
 
 .title.home{
+  font-family: Montserrat;
   font-size: 4em;
   text-align: left;
   margin-bottom: 0em;
@@ -93,17 +94,20 @@ code {
 }
 
 .info.home{
+  font-family: Montserrat;
   text-align: left;
   font-size: 2em;
 }
 
 .downPrice{
+  font-family: Montserrat;
   color: #ff2e63;
   font-size: "5em"
 }
 
 
 .infoBox{
+  font-family: Montserrat;
   margin: 1em;
   background-Color: #39c9a0;
   border-Radius: 8px 8px 8px 8px;
@@ -113,10 +117,12 @@ code {
 }
 
 .infoBox.home{
+  font-family: Montserrat;
   background: #f45a6a;
 }
 
 .news {
+  font-family: Montserrat;
   margin: 1em;
   border-Radius: 8px 8px 8px 8px;
   color: #e0e0e0;
@@ -124,5 +130,6 @@ code {
 }
 
 .news.home{
+  font-family: Montserrat;
   text-align: left;
 }
