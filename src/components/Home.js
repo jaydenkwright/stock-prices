@@ -6,14 +6,14 @@ class Home extends Component {
         news: []
     }
     componentDidMount(){
-        fetch(`https://cloud.iexapis.com/stable/stock/goog/quote?token=${process.env.REACT_APP_STOCK_KEY}`)
+        fetch(`https://cloud.iexapis.com/stable/stock/${this.props.stockName}/quote?token=${process.env.REACT_APP_STOCK_KEY}`)
             .then(res => res.json())
             .then(result => {
                 this.setState({
                     data: result
                 })
             });
-        fetch(`https://newsapi.org/v2/everything?q=Google&apiKey=${process.env.REACT_APP_NEWS_KEY}`)
+        fetch(`https://newsapi.org/v2/everything?q=${this.props.stockName}&apiKey=${process.env.REACT_APP_NEWS_KEY}`)
             .then(res => res.json())
             .then(result => {
                 this.setState({
@@ -23,14 +23,15 @@ class Home extends Component {
                     }
                 })
             });
-        
+                document.body.style.backgroundColor = "#f67280";
+    }
+
+    componentWillUnmount(){
+        document.body.style.backgroundColor = null;
     }
 render(){
         return (
             <div>
-                <div className="title home">
-                    <h3>Hot Stocks</h3>
-                </div>
                 <div className="infoBox home">
                     <div className="title home">
                         <h3>{this.state.data.symbol}</h3>

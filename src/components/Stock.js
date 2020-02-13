@@ -34,6 +34,7 @@ export class Stock extends Component {
         color: "#e0e0e0",
         margin: "0em"
     }
+
     render() {
         return (
             <div>
