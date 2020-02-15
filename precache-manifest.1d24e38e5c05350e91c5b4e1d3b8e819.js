@@ -1,11 +1,11 @@
 self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
-    "revision": "09eebade2e458097bcb13ad8b5b39121",
+    "revision": "c6a4210846bbd13cfb3f9dd3dba28d20",
     "url": "/stock-prices/index.html"
   },
   {
-    "revision": "9e9764313f588683bd08",
-    "url": "/stock-prices/static/css/main.d4e0a745.chunk.css"
+    "revision": "6068fcea1008a93b1680",
+    "url": "/stock-prices/static/css/main.a48083fa.chunk.css"
   },
   {
     "revision": "7007d61c9af78c865787",
@@ -16,8 +16,8 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/stock-prices/static/js/2.fd9181fd.chunk.js.LICENSE.txt"
   },
   {
-    "revision": "9e9764313f588683bd08",
-    "url": "/stock-prices/static/js/main.d648b2b3.chunk.js"
+    "revision": "6068fcea1008a93b1680",
+    "url": "/stock-prices/static/js/main.863c57b1.chunk.js"
   },
   {
     "revision": "432a8709f0bc0e1fd2b1",
