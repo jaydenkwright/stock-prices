@@ -8,6 +8,7 @@
     transition: 0.9s ease-out;
   }
 
+
   .title{
     font-family: helvetica;
     padding-top: 0em;
@@ -15,7 +16,7 @@
     text-align: left;
     margin-bottom: 0em;
     color: #e0e0e0;
-    transition: 0.8s ease-out;
+    transition: 0.2s ease;
   }
 
   .info{
@@ -24,7 +25,7 @@
     font-size: 2em;
     color: #e0e0e0;
     margin: 0em;
-    transition: 0.8s ease-out;
+    transition: 0.3s ease-out;
   }
 
   .news {
@@ -34,4 +35,5 @@
     color: #e0e0e0;
     transition: 0.9s ease-out;
     text-align: left;
+    transition: 0.4s ease-out;
   }
