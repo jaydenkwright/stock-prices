@@ -1,0 +1,37 @@
+.infoBox{
+    font-family: Montserrat;
+    margin: 1em;
+    background: #f45a6a;
+    border-Radius: 8px 8px 8px 8px;
+    color: #e0e0e0;
+    padding: 0.5em;
+    transition: 0.9s ease-out;
+  }
+
+  .title{
+    font-family: Montserrat;
+    padding-top: 0em;
+    font-size: 4em;
+    text-align: left;
+    margin-bottom: 0em;
+    color: #e0e0e0;
+    transition: 0.8s ease-out;
+  }
+
+  .info{
+    font-family: Montserrat;
+    text-align: left;
+    font-size: 2em;
+    color: #e0e0e0;
+    margin: 0em;
+    transition: 0.8s ease-out;
+  }
+
+  .news {
+    font-family: Montserrat;
+    margin: 1em;
+    border-Radius: 8px 8px 8px 8px;
+    color: #e0e0e0;
+    transition: 0.9s ease-out;
+    text-align: left;
+  }
