@@ -1,6 +1,6 @@
 .title{
     padding-top: 0em;
-    font-family: Montserrat;
+    font-family: helvetica;
     font-size: 3em;
     color: #e0e0e0;
     margin-bottom: 1em;
@@ -8,7 +8,7 @@
   }
 
   .info{
-    font-Family: Montserrat;
+    font-family: helvetica;
     font-Size: 3em;
     color: #e0e0e0;
     margin: 0em;
@@ -16,21 +16,21 @@
   }
 
   .downPrice{
-    font-family: Montserrat;
+    font-family: helvetica;
     color: #ff2e63;
     font-size: "5em"
   }
 
 .openClosePrice{
     padding: 1em;
-    font-Family: Montserrat;
+    font-family: helvetica;
     font-Size: 2em;
     color: #e0e0e0;
     margin: 0em;
 }
 
 .stockNewsBox{
-    font-family: Montserrat;
+    font-family: helvetica;
     margin: 1em;
     background-Color: #39c9a0;
     border-Radius: 8px 8px 8px 8px;
