@@ -1,4 +1,5 @@
 import React, { Component } from 'react'
+import styles from './Home.module.css'
 
 class Home extends Component {
     state = {
@@ -32,18 +33,18 @@ class Home extends Component {
 render(){
         return (
             <div>
-                <div className="infoBox home">
-                    <div className="title home">
+                <div className={styles.infoBox}>
+                    <div className={styles.title}>
                         <h3>{this.state.data.symbol}</h3>
                     </div>
                     <h4>
-                        <div className="info home">
+                        <div className={styles.info}>
                             <p>{this.state.data.companyName}</p>
                             <p>${this.state.data.latestPrice}</p>
                             <p>{this.state.data.primaryExchange}</p>
                         </div>
                     </h4>
-                    <div className="news home">
+                    <div className={styles.news}>
                         <h1>{this.state.news.title}</h1>
                         <p>{this.state.news.description}</p>
                     </div>
