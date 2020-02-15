@@ -1,5 +1,6 @@
 import React, { useState} from 'react';
 import './App.css';
+import styles from './App.module.css'
 import Stock from './components/Stock'
 import Home from './components/Home'
 
@@ -46,11 +47,11 @@ class App extends React.Component {
   render(){
     return (
       // class changes depending on weather the user is searching or not
-      <div className={this.state.isSearching === false ? "App home" : "App"}>
-          <div className="search-box">
+      <div className={this.state.isSearching === false ? styles.AppHome : styles.App}>
+          <div className={styles.searchBox}>
           <input 
             type="text"
-            className="search-bar"
+            className={styles.searchBar}
             placeholder="Search for a stock symbol... ex: AAPL, TSLA, FB..."
             value={this.state.query}
             onKeyPress={this.search}
