@@ -1,10 +1,28 @@
-import React, { Component } from 'react'
+import React, { Component, createContext } from 'react'
 import styles from './Stock.module.css'
+const { Provider, Consumer} = createContext({
+    data: [],
+    news: []
+  })
 export class Stock extends Component {
+    state = {
+        isLoaded: false
+    }
+    
+    componentDidUpdate(prevProps){
+        if(this.props.data !== prevProps.data){
+            
+        }
+    }
 
+    componentDidMount(){
+        console.log('mounted')
+    }
     render() {
         return (
-            <div>
+        <Consumer>
+            {({ data, news}) => (
+                <div>
                 <div className={styles.title}>   
                         <h1>
                         {this.props.data.symbol}
@@ -14,7 +32,7 @@ export class Stock extends Component {
                     <div className={styles.info}>
                         <h3>
                             <div className={this.props.data.iexRealtimePrice < this.props.data.open ? styles.downPrice : ''}> 
-                                ${this.props.data.iexRealtimePrice !== 0 ? this.props.data.iexRealtimePrice : this.props.data.latestPrice}
+                                ${this.props.data.iexRealtimePrice !== null && this.props.data.iexRealtimePrice !== 0 ? this.props.data.iexRealtimePrice : this.props.data.latestPrice}
                             </div>
                         </h3>
                         <h5>{ this.props.data.primaryExchange }</h5>
@@ -33,6 +51,8 @@ export class Stock extends Component {
                         <p>{ this.props.news.description}</p>
                     </div>
             </div>
+            )}
+        </Consumer>
         )
     }
 }

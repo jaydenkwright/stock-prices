@@ -38,3 +38,11 @@
     padding: 0.5em;
     transition: 0.9s ease-out;
 }
+
+@media only screen and (min-width: 1000px) {
+.stockNewsBox{
+  width: 50%;
+  margin-left: auto;
+  margin-right: auto;
+}
+}

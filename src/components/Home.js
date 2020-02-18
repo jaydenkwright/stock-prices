@@ -46,7 +46,7 @@ render(){
                     <h4>
                         <div className={this.state.isLoaded === true ? styles.info: ''}>
                             <p>{this.state.data.companyName}</p>
-                            <p>${this.state.data.latestPrice}</p>
+                            <p>{`$${this.state.data.latestPrice}`}</p>
                             <p>{this.state.data.primaryExchange}</p>
                         </div>
                     </h4>

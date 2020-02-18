@@ -1,9 +1,15 @@
-import React, { useState} from 'react';
+import React, { component, createContext} from 'react';
 import './App.css';
 import styles from './App.module.css'
 import Stock from './components/Stock'
 import Home from './components/Home'
-
+const { Provider, Consumer} = createContext({
+  stockData: [],
+  query: '',
+  stockNews: [],
+  isSearching: false,
+  isLoading: false,
+})
 class App extends React.Component {
 // Set default states
   state = {
@@ -24,7 +30,7 @@ class App extends React.Component {
         .then(result => {
           // Sets the stockdata into state
           this.setState({
-            isLoading: true,
+            isLoading: false,
             stockData: result,
             isSearching: true,
           })
@@ -47,28 +53,30 @@ class App extends React.Component {
   render(){
     return (
       // class changes depending on weather the user is searching or not
-      <div className={this.state.isSearching === false ? styles.AppHome : styles.App}>
-          <div className={styles.searchBox}>
-          <input 
-            type="text"
-            className={styles.searchBar}
-            placeholder="Search for a stock symbol... ex: AAPL, TSLA, FB..."
-            value={this.state.query}
-            onKeyPress={this.search}
-            onChange={this.onChange}
-          />
-          </div>
-          {this.state.isSearching === false ? 
-          <div>
-            <Home stockName="goog" />
-            <Home stockName="fb" />
-            <Home stockName="snap" /> 
-          </div>
-          : ''}
-          {this.state.isSearching === true ? 
-          <Stock data={this.state.stockData} news={this.state.stockNews}/> 
-          : ''}
-      </div>
+    <Provider value={this.state}>
+          <div className={this.state.isSearching === false ? styles.AppHome : styles.App}>
+            <div className={styles.searchBox}>
+            <input 
+              type="text"
+              className={styles.searchBar}
+              placeholder="Search for a stock symbol... ex: AAPL, TSLA, FB..."
+              value={this.state.query}
+              onKeyPress={this.search}
+              onChange={this.onChange}
+            />
+            </div>
+            {this.state.isSearching === false ? 
+            <div>
+              <Home stockName="goog" />
+              <Home stockName="fb" />
+              <Home stockName="snap" /> 
+            </div>
+            : ''}
+            {this.state.isSearching === true ? 
+            <Stock data={this.state.stockData} news={this.state.stockNews}/> 
+            : ''}
+        </div>
+    </Provider>
     );
   }
 }
