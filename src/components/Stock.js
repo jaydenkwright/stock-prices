@@ -1,9 +1,5 @@
-import React, { Component, createContext } from 'react'
+import React, { Component } from 'react'
 import styles from './Stock.module.css'
-const { Provider, Consumer} = createContext({
-    data: [],
-    news: []
-  })
 export class Stock extends Component {
     state = {
         isLoaded: false
@@ -20,8 +16,6 @@ export class Stock extends Component {
     }
     render() {
         return (
-        <Consumer>
-            {({ data, news}) => (
                 <div>
                 <div className={styles.title}>   
                         <h1>
@@ -51,8 +45,6 @@ export class Stock extends Component {
                         <p>{ this.props.news.description}</p>
                     </div>
             </div>
-            )}
-        </Consumer>
         )
     }
 }
