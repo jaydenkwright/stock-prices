@@ -1,15 +1,9 @@
-import React, { component, createContext} from 'react';
+import React from 'react';
 import './App.css';
 import styles from './App.module.css'
 import Stock from './components/Stock'
 import Home from './components/Home'
-const { Provider, Consumer} = createContext({
-  stockData: [],
-  query: '',
-  stockNews: [],
-  isSearching: false,
-  isLoading: false,
-})
+
 class App extends React.Component {
 // Set default states
   state = {
@@ -53,7 +47,6 @@ class App extends React.Component {
   render(){
     return (
       // class changes depending on weather the user is searching or not
-    <Provider value={this.state}>
           <div className={this.state.isSearching === false ? styles.AppHome : styles.App}>
             <div className={styles.searchBox}>
             <input 
@@ -65,6 +58,8 @@ class App extends React.Component {
               onChange={this.onChange}
             />
             </div>
+            {//  Detemines whether or not to mount the Home or Stock components   
+            }
             {this.state.isSearching === false ? 
             <div>
               <Home stockName="goog" />
@@ -76,7 +71,6 @@ class App extends React.Component {
             <Stock data={this.state.stockData} news={this.state.stockNews}/> 
             : ''}
         </div>
-    </Provider>
     );
   }
 }
