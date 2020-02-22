@@ -3,6 +3,7 @@ import './App.css';
 import styles from './App.module.css'
 import Stock from './components/Stock'
 import Home from './components/Home'
+import Context from './Context/Context'
 
 class App extends React.Component {
 // Set default states
@@ -11,7 +12,6 @@ class App extends React.Component {
     query: '',
     stockNews: [],
     isSearching: false,
-    isLoading: false,
   }
   // Function to set text entered into the search box to the query state
   onChange = (e) => this.setState({ query: e.target.value });
@@ -24,7 +24,6 @@ class App extends React.Component {
         .then(result => {
           // Sets the stockdata into state
           this.setState({
-            isLoading: false,
             stockData: result,
             isSearching: true,
           })
@@ -38,15 +37,20 @@ class App extends React.Component {
                 stockNews: {
                   title: result.articles[0].title, 
                   description: result.articles[0].description
-              }
-              })
-            });
+            }
+          })
         });
+      });
     }
   }
   render(){
     return (
-      // class changes depending on weather the user is searching or not
+      <Context.Provider value={{
+        stockData: this.state.stockData,
+        query: this.state.query,
+        stockNews: this.state.stockNews,
+        isSearching: this.state.isSearching
+      }}>
           <div className={this.state.isSearching === false ? styles.AppHome : styles.App}>
             <div className={styles.searchBox}>
             <input 
@@ -68,9 +72,10 @@ class App extends React.Component {
             </div>
             : ''}
             {this.state.isSearching === true ? 
-            <Stock data={this.state.stockData} news={this.state.stockNews}/> 
+            <Stock /> 
             : ''}
-        </div>
+          </div>
+        </Context.Provider>
     );
   }
 }
