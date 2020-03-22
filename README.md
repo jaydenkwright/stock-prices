@@ -6,6 +6,8 @@ This is a simple stock price web application built in react. Type a stock symbol
 
 ![Homepage Screenshot](https://i.imgur.com/7gfYADm.png)
 
+![Search Screenshot](https://i.imgur.com/ANEJu8B.png)
+
 # Built with
 
 [React](https://reactjs.org)
