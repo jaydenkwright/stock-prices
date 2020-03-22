@@ -4,7 +4,7 @@ This is a simple stock price web application built in react. Type a stock symbol
 
 [Try it out here](https://jaydenkwright.github.io/stock-prices/)
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+![Homepage Screenshot](https://i.imgur.com/7gfYADm.png)
 
 # Built with
 
